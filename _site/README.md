@@ -213,7 +213,7 @@ minima:
   date_format: "%b %-d, %Y"
 ```
 
-
+ 
 ### Extending the `<head />`
 
 You can *add* custom metadata to the `<head />` of your layouts by creating a file `_includes/custom-head.html` in your source directory. For example, to add favicons:

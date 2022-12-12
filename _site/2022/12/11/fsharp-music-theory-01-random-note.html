@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Music theory in F# - Random note | Christophe Moinard’s Blog</title>
+<meta name="generator" content="Jekyll v4.3.1" />
+<meta property="og:title" content="Music theory in F# - Random note" />
+<meta name="author" content="Christophe Moinard" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="Music theory in F# - Random note" />
+<meta property="og:description" content="Music theory in F# - Random note" />
+<link rel="canonical" href="http://localhost:4000/2022/12/11/fsharp-music-theory-01-random-note.html" />
+<meta property="og:url" content="http://localhost:4000/2022/12/11/fsharp-music-theory-01-random-note.html" />
+<meta property="og:site_name" content="Christophe Moinard’s Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-12-11T13:00:00+01:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Music theory in F# - Random note" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Christophe Moinard"},"dateModified":"2022-12-11T13:00:00+01:00","datePublished":"2022-12-11T13:00:00+01:00","description":"Music theory in F# - Random note","headline":"Music theory in F# - Random note","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2022/12/11/fsharp-music-theory-01-random-note.html"},"url":"http://localhost:4000/2022/12/11/fsharp-music-theory-01-random-note.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Christophe Moinard&apos;s Blog" />
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Christophe Moinard&#39;s Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Music theory in F# - Random note</h1>
+    <p class="post-meta"><time class="dt-published" datetime="2022-12-11T13:00:00+01:00" itemprop="datePublished">
+        2022-12-11
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h1 id="first-step-random-note">First step: Random note</h1>
+
+<p>This is the first part of the music theory in F# series:</p>
+<ul>
+  <li><a href="/2022/12/11/fsharp-music-theory-00-introduction">Introduction</a></li>
+  <li>Step 1: Random note</li>
+  <li>Step 2: <a href="/2022/12/11/fsharp-music-theory-02-major-scale">The Major scale</a></li>
+  <li>Step 3: <a href="/2022/12/11/fsharp-music-theory-03-chords">Chords of the Major scale</a></li>
+</ul>
+
+<h2 id="theory">Theory</h2>
+
+<p>There are 12 notes in occidental music theory, 7 natural and 5 altered:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Natural: C, D, E, F, G, A, B
+Altered: C#, D#, F#, G#, A#
+</code></pre></div></div>
+<p>Each notes are separated by a semitone. If you look at a piano board, the white keys are the natural notes and the black keys the altered:</p>
+
+<p><img src="/assets/images/fsharp-music-theory/KeyboardWithNotes.jpg" alt="Piano keyboard with the name of the notes" /></p>
+
+<p>A sharp (<code class="language-plaintext highlighter-rouge">#</code>) means that the base note is a semitone higher, so <code class="language-plaintext highlighter-rouge">A#</code> is a semitone higher than <code class="language-plaintext highlighter-rouge">A</code>.</p>
+
+<p>A flat (<code class="language-plaintext highlighter-rouge">b</code>) means that the base note is a semitone lower, so <code class="language-plaintext highlighter-rouge">Bb</code> is a semitone lower than <code class="language-plaintext highlighter-rouge">B</code>.</p>
+
+<p><code class="language-plaintext highlighter-rouge">A#</code> and <code class="language-plaintext highlighter-rouge">Bb</code> are enharmonic, it means that they produce the same sound.</p>
+
+<p>If you increase (or decrease) a note by 12 semitones, you’ll have the same note but with a higher (or lower) pitch, these notes are called octaves.</p>
+
+<p><img src="/assets/images/fsharp-music-theory/Octaves.jpg" alt="Piano with all the C marked as octaves" /></p>
+
+<h2 id="code">Code</h2>
+
+<p>Like I said before, some notes produce the same sound, so I will represent only sharp notes and not flat ones to simplify.</p>
+
+<div class="language-fsharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">type</span> <span class="nc">Note</span> <span class="p">=</span>
+    <span class="p">|</span> <span class="nc">C</span> <span class="p">|</span> <span class="nc">CSharp</span>
+    <span class="p">|</span> <span class="nc">D</span> <span class="p">|</span> <span class="nc">DSharp</span>
+    <span class="p">|</span> <span class="nc">E</span>
+    <span class="p">|</span> <span class="nc">F</span> <span class="p">|</span> <span class="nc">FSharp</span>
+    <span class="p">|</span> <span class="nc">G</span> <span class="p">|</span> <span class="nc">GSharp</span>
+    <span class="p">|</span> <span class="nc">A</span> <span class="p">|</span> <span class="nc">ASharp</span>
+    <span class="p">|</span> <span class="nc">B</span>
+
+<span class="k">module</span> <span class="nc">Note</span> <span class="p">=</span>
+    <span class="k">let</span> <span class="n">all</span> <span class="p">=</span> <span class="p">[</span>
+        <span class="nc">C</span><span class="p">;</span> <span class="nc">CSharp</span>
+        <span class="nc">D</span><span class="p">;</span> <span class="nc">DSharp</span>
+        <span class="nc">E</span>
+        <span class="nc">F</span><span class="p">;</span> <span class="nc">FSharp</span>
+        <span class="nc">G</span><span class="p">;</span> <span class="nc">GSharp</span>
+        <span class="nc">A</span><span class="p">;</span> <span class="nc">ASharp</span>
+        <span class="nc">B</span>
+    <span class="p">]</span>
+</code></pre></div></div>
+
+<p>The type <code class="language-plaintext highlighter-rouge">Note</code> is a union type which mean</p>
+<blockquote>
+  <p>It’s either <code class="language-plaintext highlighter-rouge">A</code> or <code class="language-plaintext highlighter-rouge">ASharp</code> or <code class="language-plaintext highlighter-rouge">B</code> or …</p>
+</blockquote>
+
+<p>The <code class="language-plaintext highlighter-rouge">Note</code> module lists all the functions and values related to the concept of <code class="language-plaintext highlighter-rouge">Note</code>. <code class="language-plaintext highlighter-rouge">all</code> is the list of all possible <code class="language-plaintext highlighter-rouge">Note</code>.</p>
+
+<p>Now, I want to choose a random note:</p>
+
+<div class="language-fsharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">open</span> <span class="nc">System</span>
+
+<span class="k">let</span> <span class="n">random</span> <span class="p">=</span> <span class="nc">Random</span><span class="bp">()</span>
+<span class="k">let</span> <span class="n">randomIndex</span> <span class="p">=</span> <span class="n">random</span><span class="p">.</span><span class="nc">Next</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nn">Note</span><span class="p">.</span><span class="n">all</span><span class="p">.</span><span class="nc">Length</span><span class="p">)</span>
+<span class="k">let</span> <span class="n">randomNote</span> <span class="p">=</span> <span class="nn">Note</span><span class="p">.</span><span class="n">all</span><span class="o">.[</span><span class="n">randomIndex</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">randomNote</code> is the note at a random index between 0 and 11 in the <code class="language-plaintext highlighter-rouge">Note.all</code> list. FSI shows the random note, but a fancier representation will be better:</p>
+
+<div class="language-fsharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span> <span class="nc">Note</span> <span class="p">=</span>
+    <span class="k">let</span> <span class="n">name</span> <span class="n">note</span> <span class="p">=</span>
+        <span class="k">match</span> <span class="n">note</span> <span class="k">with</span>
+        <span class="p">|</span> <span class="nc">CSharp</span> <span class="p">-&gt;</span> <span class="s2">"C#"</span>
+        <span class="p">|</span> <span class="nc">DSharp</span> <span class="p">-&gt;</span> <span class="s2">"D#"</span>
+        <span class="p">|</span> <span class="nc">FSharp</span> <span class="p">-&gt;</span> <span class="s2">"F#"</span>
+        <span class="p">|</span> <span class="nc">GSharp</span> <span class="p">-&gt;</span> <span class="s2">"G#"</span>
+        <span class="p">|</span> <span class="nc">ASharp</span> <span class="p">-&gt;</span> <span class="s2">"A#"</span>
+        <span class="p">|</span> <span class="n">n</span> <span class="p">-&gt;</span> <span class="kt">string</span> <span class="n">n</span>
+
+    <span class="c1">// other functions and values</span>
+
+<span class="c1">// previous code with randomNote</span>
+
+<span class="n">printfn</span> <span class="s2">"Chosen note: %s"</span> <span class="p">(</span><span class="nn">Note</span><span class="p">.</span><span class="n">name</span> <span class="n">randomNote</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">match ... with</code> is a pattern match, it’s like a (very) powerful <code class="language-plaintext highlighter-rouge">switch</code>. So <code class="language-plaintext highlighter-rouge">name</code> works like this:</p>
+<ul>
+  <li>If it’s a sharp note, return <code class="language-plaintext highlighter-rouge">"...#"</code></li>
+  <li>Else return the string representation of the note</li>
+</ul>
+
+<p>Another big F# feature is that the compiler infers a lot of things for you. It can infers that <code class="language-plaintext highlighter-rouge">name</code> is a function that takes a <code class="language-plaintext highlighter-rouge">Note</code> as argument and returns a <code class="language-plaintext highlighter-rouge">string</code> because the pattern matching matches <code class="language-plaintext highlighter-rouge">Note</code> values and returns <code class="language-plaintext highlighter-rouge">string</code>. So no need to be explicit about the types in general, the code will be more concise with this strong typing. But if you prefer to be explicit, you can rewrite this function as follows:</p>
+<div class="language-fsharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span> <span class="nc">Note</span> <span class="p">=</span>
+    <span class="k">let</span> <span class="n">name</span> <span class="p">(</span><span class="n">note</span><span class="p">:</span> <span class="nc">Note</span><span class="o">):</span> <span class="kt">string</span> <span class="p">=</span>
+        <span class="k">match</span> <span class="n">note</span> <span class="k">with</span>
+        <span class="p">|</span> <span class="nc">CSharp</span> <span class="p">-&gt;</span> <span class="s2">"C#"</span>
+        <span class="p">|</span> <span class="nc">DSharp</span> <span class="p">-&gt;</span> <span class="s2">"D#"</span>
+        <span class="p">|</span> <span class="nc">FSharp</span> <span class="p">-&gt;</span> <span class="s2">"F#"</span>
+        <span class="p">|</span> <span class="nc">GSharp</span> <span class="p">-&gt;</span> <span class="s2">"G#"</span>
+        <span class="p">|</span> <span class="nc">ASharp</span> <span class="p">-&gt;</span> <span class="s2">"A#"</span>
+        <span class="p">|</span> <span class="n">n</span> <span class="p">-&gt;</span> <span class="kt">string</span> <span class="n">n</span>
+</code></pre></div></div>
+
+<p>Then the <code class="language-plaintext highlighter-rouge">printfn</code> function write in the console:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Chosen note: F#
+</code></pre></div></div>
+
+<p>You can also use the <code class="language-plaintext highlighter-rouge">|&gt;</code> operator to simplify the code:</p>
+<div class="language-fsharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">randomNote</span>
+<span class="p">|&gt;</span> <span class="nn">Note</span><span class="p">.</span><span class="n">name</span>
+<span class="p">|&gt;</span> <span class="n">printfn</span> <span class="s2">"Chosen note: %s"</span>
+</code></pre></div></div>
+
+<p>This operator is like the <code class="language-plaintext highlighter-rouge">|</code> operator in Unix, it takes the value on its left and passes it as the last argument of the function on its right:</p>
+<div class="language-fsharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="n">increment</span> <span class="n">x</span> <span class="p">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="n">increment</span> <span class="mi">2</span> <span class="c1">// returns 3</span>
+
+<span class="mi">3</span> <span class="p">|&gt;</span> <span class="n">increment</span> <span class="c1">// returns 4</span>
+</code></pre></div></div>
+
+<p>It is a powerful operator which is used a lot in F#.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>That’s all for this step. You can check out the full code <a href="https://github.com/cmoinard/FsMusicTheory/blob/main/Scripts/01_RandomNote.fsx">here</a>.</p>
+
+<p>Next step: <a href="/2022/12/11/fsharp-music-theory-02-major-scale">The Major scale</a></p>
+
+  </div><a class="u-url" href="/2022/12/11/fsharp-music-theory-01-random-note.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+        <ul class="contact-list">
+          <li class="p-name">Christophe Moinard</li>
+          <li><a class="u-email" href="mailto:christophe.moinard@netc.fr">christophe.moinard@netc.fr</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p>F#, Meshuggah and crème de marrons addict
+</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li>
+  <a rel="me" href="https://github.com/cmoinard" target="_blank" title="github">
+    <svg class="svg-icon grey">
+      <use xlink:href="/assets/minima-social-icons.svg#github"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="https://twitter.com/chr_moinard" target="_blank" title="twitter">
+    <svg class="svg-icon grey">
+      <use xlink:href="/assets/minima-social-icons.svg#twitter"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="https://piaille.fr/@cmoinard" target="_blank" title="mastodon">
+    <svg class="svg-icon grey">
+      <use xlink:href="/assets/minima-social-icons.svg#mastodon"></use>
+    </svg>
+  </a>
+</li>
+</ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

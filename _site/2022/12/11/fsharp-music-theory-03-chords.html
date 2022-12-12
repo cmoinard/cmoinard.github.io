@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Music theory in F# - Chords of the Major scale | Christophe Moinard’s Blog</title>
+<meta name="generator" content="Jekyll v4.3.1" />
+<meta property="og:title" content="Music theory in F# - Chords of the Major scale" />
+<meta name="author" content="Christophe Moinard" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="Music theory in F# - Chords of the Major scale" />
+<meta property="og:description" content="Music theory in F# - Chords of the Major scale" />
+<link rel="canonical" href="http://localhost:4000/2022/12/11/fsharp-music-theory-03-chords.html" />
+<meta property="og:url" content="http://localhost:4000/2022/12/11/fsharp-music-theory-03-chords.html" />
+<meta property="og:site_name" content="Christophe Moinard’s Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-12-11T13:00:00+01:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Music theory in F# - Chords of the Major scale" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Christophe Moinard"},"dateModified":"2022-12-11T13:00:00+01:00","datePublished":"2022-12-11T13:00:00+01:00","description":"Music theory in F# - Chords of the Major scale","headline":"Music theory in F# - Chords of the Major scale","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2022/12/11/fsharp-music-theory-03-chords.html"},"url":"http://localhost:4000/2022/12/11/fsharp-music-theory-03-chords.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Christophe Moinard&apos;s Blog" />
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Christophe Moinard&#39;s Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Music theory in F# - Chords of the Major scale</h1>
+    <p class="post-meta"><time class="dt-published" datetime="2022-12-11T13:00:00+01:00" itemprop="datePublished">
+        2022-12-11
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h1 id="third-step-the-chords-of-the-major-scale">Third step: The chords of the Major scale</h1>
+
+<p>This is the third part of the music theory in F# series:</p>
+<ul>
+  <li><a href="/2022/12/11/fsharp-music-theory-00-introduction">Introduction</a></li>
+  <li>Step 1: <a href="/2022/12/11/fsharp-music-theory-01-random-note">Random note</a></li>
+  <li>Step 2: <a href="/2022/12/11/fsharp-music-theory-02-major-scale">The Major scale</a></li>
+  <li>Step 3: Chords of the Major scale</li>
+</ul>
+
+<h2 id="theory">Theory</h2>
+
+<p>Imagine, you found a good melody in C Major, great! It can be a good idea to have some chords around it.</p>
+
+<p>First idea, you can play octaves on top of your melody, but play only notes in your scale.</p>
+
+<p><img src="/assets/images/fsharp-music-theory/OctaveChord.jpg" alt="Octaves on a piano" /></p>
+
+<p><a href="/assets/audio/fsharp-music-theory/C8-chord.mp3">Listen</a></p>
+
+<p>Octaves are OK but they feel a bit hollow. That’s OK if you want this kind of feeling in your song.</p>
+
+<p>If you want some consistency, octaves may not be the best choice. Just add the fifth and your chord will gain some power! How do you create these power chords? Choose a note and add 7 semitones:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>C power chord (also noted C5)
+Root:  C
+Fifth: G (C + 7 semitones)
+
+D5
+Root:  D
+Fifth: A (D + 7 semitones)
+
+...
+</code></pre></div></div>
+
+<p>These power chords are used a lot in <a href="https://www.youtube.com/watch?v=XabBTTY1YiI">rock, punk and metal</a>.</p>
+
+<p><img src="/assets/images/fsharp-music-theory/PowerChord.jpg" alt="C power chord on a piano" /></p>
+
+<p><a href="/assets/audio/fsharp-music-theory/C5-chord.mp3">Listen</a></p>
+
+<p>Power chords are great and powerful, but they miss something, we can’t say if they are joyful or sad. For that, add the third to your power chord.</p>
+
+<p>If the third is 4 semitones away from the root, this third is called major third, and the chord is a major chord. Major chords sounds joyful, they are noted with the name of the root. So the <code class="language-plaintext highlighter-rouge">C</code> chord is a C Major.</p>
+
+<p><img src="/assets/images/fsharp-music-theory/MajorChord.jpg" alt="C Major chord on a piano" /></p>
+
+<p><a href="/assets/audio/fsharp-music-theory/C-chord.mp3">Listen</a></p>
+
+<p>If the third is 3 semitones away from the root, this third is called minor third, and the chord is a minor chord. Minor chords sounds sad, they are noted with a little <code class="language-plaintext highlighter-rouge">m</code>. So <code class="language-plaintext highlighter-rouge">Cm</code> is a C minor.</p>
+
+<p><img src="/assets/images/fsharp-music-theory/MinorChord.jpg" alt="C Minor chord on a piano" /></p>
+
+<p><a href="/assets/audio/fsharp-music-theory/Cm-chord.mp3">Listen</a></p>
+
+<p>Here are some examples:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>C Major (C)
+Root:  C
+Third: E (C + 4 semitones)
+Fifth: G (C + 7 semitones)
+
+C Minor (Cm)
+Root:  C
+Third: D# (C + 3 semitones)
+Fifth: G  (C + 7 semitones)
+
+A minor (Am)
+Root:  A
+Third: C (A + 3 semitones)
+Fifth: E (A + 7 semitones)
+
+F# minor (F#m)
+Root:  F#
+Third: A  (F# + 3 semitones)
+Fifth: C# (F# + 7 semitones)
+</code></pre></div></div>
+
+<p>OK, we know octaves, power chords, Major chords and minor chords, but can we play any chord we want on top of our song?</p>
+
+<p>We can, but it can sound dissonant. If your melody is made with C, E and G and you play a C minor (made with C-D#-G) chord on it, you will play at the same time the E from your melody and the D# from your Cm chord. D# and E are just a semitone away frow each other, if you play them at the same time, it will sound really <a href="/assets/audio/fsharp-music-theory/C-with-minor-second.mp3">dissonant</a>. But it can be also <a href="https://youtu.be/YeTNkPXRrVY?list=PL_9gWeiShHFHzpU20PyVHiawAuPCJH9qH&amp;t=353">awesome</a> to create a lot of tension.</p>
+
+<p>A better option to avoid dissonance is to use only the notes of your scale.</p>
+<ol>
+  <li>Choose one note of the scale as the chord root</li>
+  <li>Add the third note of the scale from this chord root</li>
+  <li>Add the fifth note of the scale from this chord root</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>C Major scale : C, D, E, F, G, A, B
+
+The chord with a C root will be:
+Root:  C
+Third: E (third note from the C)
+Fifth: G (fifth note from the C)
+There are 4 semitones between the C and the E, so the third is Major.
+The C chord in a C Major scale is a C Major (noted C).
+</code></pre></div></div>
+<p><img src="/assets/images/fsharp-music-theory/CMajorChordInCMajorScale.jpg" alt="C chord in C Major scale" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The chord with a D root will be:
+Root:  D
+Third: F (third note from the D)
+Fifth: A (fifth note from the D)
+There are 3 semitones between the D and the F, so the third is Minor.
+The D chord in a C Major scale is a D minor (noted Dm).
+</code></pre></div></div>
+<p><img src="/assets/images/fsharp-music-theory/DMinorChordInCMajorScale.jpg" alt="Dm chord in C Major scale" /></p>
+
+<p>So in the C Major scale, you have these chords:</p>
+<ol>
+  <li>C</li>
+  <li>Dm</li>
+  <li>Em</li>
+  <li>F</li>
+  <li>G</li>
+  <li>Am</li>
+  <li>???</li>
+</ol>
+
+<p>Beware of the 7th chord, it is special:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>C Major scale : C, D, E, F, G, A, B
+
+The chord with a B root will be:
+Root:  B
+Third: D (third note from the B)
+Fifth: F (fifth note from the B)
+There are 3 semitones between the B and the D, so the third is minor.
+
+BUT there are only 6 semitones between the B and the F,
+the fifth is not perfect (7 semitones away from the root),
+it is a diminished fifth.
+
+The B chord in a C Major scale is a B diminished (B° or Bdim).
+</code></pre></div></div>
+
+<p><img src="/assets/images/fsharp-music-theory/BDiminishedChordInCMajorScale.jpg" alt="B° chord in C Major scale" /></p>
+
+<p><a href="/assets/audio/fsharp-music-theory/Bdim-chord.mp3">Listen</a></p>
+
+<p>Diminished chords sounds weird because of this diminished fifth, they are spicy, uncomfortable. It is great if you want this feeling in your song, but I you don’t, you can avoid it.</p>
+
+<p>Now we know all the chords of C Major:</p>
+<ol>
+  <li>C</li>
+  <li>Dm</li>
+  <li>Em</li>
+  <li>F</li>
+  <li>G</li>
+  <li>Am</li>
+  <li>B°</li>
+</ol>
+
+<p>We can generalize this to any Major scale, each position is called a degree and can be Major, minor or diminished. Major degree are upper case, minor and diminished degrees are lower case:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1. Major      (noted I)
+2. minor      (noted ii)
+3. minor      (noted iii)
+4. Major      (noted IV)
+5. Major      (noted V)
+6. minor      (noted vi)
+7. diminished (noted vii°)
+</code></pre></div></div>
+
+<p>For any Major scale, list all the notes in it and apply the chord type (Major, minor, diminished) of its corresponding degrees to find all the chords you can play:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>E Major scale:
+E, F#, G#, A, B, C#, D#
+
+Chords:
+| Degree | Chord | Root-Third-Fifth |
+|--------|-------|------------------|
+| I      | E     | E    G#    B     |
+| ii     | F#m   | F#   A     C#    |
+| iii    | G#m   | G#   B     D#    |
+| IV     | A     | A    C#    E     |
+| V      | B     | B    D#    F#    |
+| vi     | C#m   | C#   E     G#    |
+| vii°   | D#°   | D#   F#    A     |
+</code></pre></div></div>
+
+<p>To build a chord progression, it is a good idea to start with the first degree and insist on it, the listener will understand that this chord is the root, it will feel like home. Then play any chord you want.</p>
+
+<p><a href="/assets/audio/fsharp-music-theory/C-I_vi_ii_V.mp3">Example in C Major</a></p>
+
+<p>One more thing, these degrees are really important because some chords progressions work better than others, they are called cadences. Finishing your chord progression with the V degree and starting again with the I degree work really well. This is called a perfect authentic cadence. There are a lot of <a href="https://en.wikipedia.org/wiki/Cadence">existing cadences</a>.</p>
+
+<p>One of the most known chord progression is the <a href="https://en.wikipedia.org/wiki/I%E2%80%93V%E2%80%93vi%E2%80%93IV_progression">I-V-vi-IV</a></p>
+
+<p><a href="/assets/audio/fsharp-music-theory/C-I_IV_vi_V.mp3">Listen</a></p>
+
+<p>This was this progression in the famous <a href="https://www.youtube.com/watch?v=5pidokakU4I">Axis of awesome - 4 chords song</a>.</p>
+
+<h2 id="code">Code</h2>
+
+<h3 id="chord">Chord</h3>
+
+<p>Just after the <code class="language-plaintext highlighter-rouge">Note</code> module, we’ll add the <code class="language-plaintext highlighter-rouge">ChordType</code> type:</p>
+
+<div class="language-fsharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">type</span> <span class="nc">ChordType</span> <span class="p">=</span>
+    <span class="p">|</span> <span class="nc">Major</span>
+    <span class="p">|</span> <span class="nc">Minor</span>
+    <span class="p">|</span> <span class="nc">Diminished</span>
+<span class="k">module</span> <span class="nc">ChordType</span> <span class="p">=</span>
+    <span class="k">let</span> <span class="n">fromIntervals</span> <span class="n">intervals</span> <span class="p">=</span>
+        <span class="k">match</span> <span class="n">intervals</span> <span class="k">with</span>
+        <span class="p">|</span> <span class="p">[</span><span class="mi">4</span><span class="p">;</span> <span class="mi">7</span><span class="p">]</span> <span class="p">-&gt;</span> <span class="nc">Major</span>
+        <span class="p">|</span> <span class="p">[</span><span class="mi">3</span><span class="p">;</span> <span class="mi">7</span><span class="p">]</span> <span class="p">-&gt;</span> <span class="nc">Minor</span>
+        <span class="p">|</span> <span class="p">[</span><span class="mi">3</span><span class="p">;</span> <span class="mi">6</span><span class="p">]</span> <span class="p">-&gt;</span> <span class="nc">Diminished</span>
+        <span class="p">|</span> <span class="p">_</span> <span class="p">-&gt;</span> <span class="n">invalidOp</span> <span class="s2">"Unknown interval"</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">fromIntervals</code> is a function that returns the <code class="language-plaintext highlighter-rouge">ChordType</code> depending on a list of intervals. Pattern matching works well with lists, so if there is intervals of 4 and 7 semitones, the chord is Major, and so on. We know only three types of chords so any other form of <code class="language-plaintext highlighter-rouge">intervals</code> will throw an <code class="language-plaintext highlighter-rouge">InvalidOperationException</code>. <a href="https://fsharpforfunandprofit.com/rop/">Exceptions may not be the best way to handle errors in a functional language</a> but it is simpler to explain.</p>
+
+<p>We could be more strict by modeling this way:</p>
+<div class="language-fsharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">type</span> <span class="nc">ThirdType</span> <span class="p">=</span>
+    <span class="p">|</span> <span class="nc">MinorThird</span>
+    <span class="p">|</span> <span class="nc">MajorThird</span>
+
+<span class="k">type</span> <span class="nc">FifthType</span> <span class="p">=</span>
+    <span class="p">|</span><span class="err"> </span><span class="nc">PerfectFifth</span>
+    <span class="p">|</span> <span class="nc">DiminishedFifth</span>
+
+<span class="k">type</span> <span class="nc">ChordType</span> <span class="p">=</span>
+    <span class="p">|</span> <span class="nc">Major</span>
+    <span class="p">|</span> <span class="nc">Minor</span>
+    <span class="p">|</span> <span class="nc">Diminished</span>
+    <span class="p">|</span> <span class="nc">MajorFlat5</span>
+
+<span class="c1">// Tuple of ThirdType AND FifthType</span>
+<span class="k">type</span> <span class="nc">TriadType</span> <span class="p">=</span> <span class="nc">ThirdType</span> <span class="p">*</span> <span class="nc">FifthType</span>
+
+<span class="k">module</span> <span class="nc">ChordType</span> <span class="p">=</span>
+    <span class="k">let</span> <span class="n">fromIntervals</span> <span class="n">triadType</span> <span class="p">=</span>
+        <span class="k">match</span> <span class="n">triadType</span> <span class="k">with</span>
+        <span class="p">|</span> <span class="nc">MajorThird</span><span class="p">,</span> <span class="nc">PerfectFifth</span> <span class="p">-&gt;</span> <span class="nc">Major</span>
+        <span class="p">|</span> <span class="nc">MinorThird</span><span class="p">,</span> <span class="nc">PerfectFifth</span> <span class="p">-&gt;</span> <span class="nc">Minor</span>
+        <span class="p">|</span> <span class="nc">MajorThird</span><span class="p">,</span> <span class="nc">DiminishedFifth</span> <span class="p">-&gt;</span> <span class="nc">MajorFlat5</span>
+        <span class="p">|</span> <span class="nc">MinorThird</span><span class="p">,</span> <span class="nc">DiminishedFifth</span> <span class="p">-&gt;</span> <span class="nc">Diminished</span>
+</code></pre></div></div>
+
+<p>It is more strict and there can’t be any error by design, but there are a lot more other chord types (Major 7, Minor 7, half diminished, sus2, sus4, inversions…). That’s why <code class="language-plaintext highlighter-rouge">intervals</code> is just a list of <code class="language-plaintext highlighter-rouge">int</code> and not a stricter type.</p>
+
+<p>Let’s forgot this stricter approach a keep the code with the <code class="language-plaintext highlighter-rouge">int list</code>.</p>
+
+<p>Now the <code class="language-plaintext highlighter-rouge">Chord</code> type. A chord is defined by the root <code class="language-plaintext highlighter-rouge">Note</code> and a <code class="language-plaintext highlighter-rouge">ChordType</code>.</p>
+
+<div class="language-fsharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Just after ChordType</span>
+<span class="k">type</span> <span class="nc">Chord</span> <span class="p">=</span> <span class="nc">Chord</span> <span class="k">of</span> <span class="nc">Note</span> <span class="p">*</span> <span class="nc">ChordType</span>
+<span class="k">module</span> <span class="nc">Chord</span> <span class="p">=</span>
+    <span class="k">let</span> <span class="n">name</span> <span class="p">(</span><span class="nc">Chord</span> <span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">chordType</span><span class="o">))</span> <span class="p">=</span>
+        <span class="k">let</span> <span class="n">note</span> <span class="p">=</span> <span class="n">root</span> <span class="p">|&gt;</span> <span class="nn">Note</span><span class="p">.</span><span class="n">name</span>
+        <span class="k">match</span> <span class="n">chordType</span> <span class="k">with</span>
+        <span class="p">|</span> <span class="nc">Major</span> <span class="p">-&gt;</span> <span class="n">note</span>
+        <span class="p">|</span> <span class="nc">Minor</span> <span class="p">-&gt;</span> <span class="o">$</span><span class="s2">"{note}m"</span>
+        <span class="p">|</span> <span class="nc">Diminished</span> <span class="p">-&gt;</span> <span class="o">$</span><span class="s2">"{note}°"</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">Chord</code> is a single union-case, composed by a tuple of <code class="language-plaintext highlighter-rouge">Note</code> and <code class="language-plaintext highlighter-rouge">ChordType</code>.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">name</code> function takes a <code class="language-plaintext highlighter-rouge">Chord</code> and deconstructs it to have access to the <code class="language-plaintext highlighter-rouge">root</code> and the <code class="language-plaintext highlighter-rouge">chordType</code>.</p>
+
+<h3 id="degree">Degree</h3>
+
+<p><code class="language-plaintext highlighter-rouge">Degree</code> implementation is very close to <code class="language-plaintext highlighter-rouge">Chord</code> because it is an abstraction of a chord in any major scale.</p>
+
+<div class="language-fsharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Just after Chord</span>
+
+<span class="k">type</span> <span class="nc">DegreeName</span> <span class="p">=</span> <span class="nc">I</span> <span class="p">|</span> <span class="nc">II</span> <span class="p">|</span> <span class="nc">III</span> <span class="p">|</span> <span class="nc">IV</span> <span class="p">|</span> <span class="nc">V</span> <span class="p">|</span> <span class="nc">VI</span> <span class="p">|</span> <span class="nc">VII</span>
+<span class="k">module</span> <span class="nc">DegreeName</span> <span class="p">=</span>
+    <span class="k">let</span> <span class="n">all</span> <span class="p">=</span> <span class="p">[</span> <span class="nc">I</span><span class="p">;</span> <span class="nc">II</span><span class="p">;</span> <span class="nc">III</span><span class="p">;</span> <span class="nc">IV</span><span class="p">;</span> <span class="nc">V</span><span class="p">;</span> <span class="nc">VI</span><span class="p">;</span> <span class="nc">VII</span> <span class="p">]</span>
+
+<span class="k">type</span> <span class="nc">Degree</span> <span class="p">=</span> <span class="nc">Degree</span> <span class="k">of</span> <span class="nc">DegreeName</span> <span class="p">*</span> <span class="nc">ChordType</span>
+<span class="k">module</span> <span class="nc">Degree</span> <span class="p">=</span>
+    <span class="k">let</span> <span class="n">name</span> <span class="p">(</span><span class="nc">Degree</span> <span class="p">(</span><span class="n">degreeName</span><span class="p">,</span> <span class="n">chordType</span><span class="o">))</span> <span class="p">=</span>
+        <span class="k">let</span> <span class="n">romanName</span> <span class="p">=</span> <span class="kt">string</span> <span class="n">degreeName</span>
+        <span class="k">match</span> <span class="n">chordType</span> <span class="k">with</span>
+        <span class="p">|</span> <span class="nc">Major</span> <span class="p">-&gt;</span> <span class="n">romanName</span>
+        <span class="p">|</span> <span class="nc">Minor</span> <span class="p">-&gt;</span> <span class="n">romanName</span><span class="p">.</span><span class="nc">ToLower</span><span class="bp">()</span>
+        <span class="p">|</span> <span class="nc">Diminished</span> <span class="p">-&gt;</span> <span class="o">$</span><span class="s2">"{romanName.ToLower()}°"</span>
+</code></pre></div></div>
+
+<h3 id="chords-of-the-scale">Chords of the scale</h3>
+
+<p>We don’t know how to implement it for now, but we know its signature:</p>
+<div class="language-fsharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span> <span class="nc">MajorScale</span> <span class="p">=</span>
+    <span class="c1">// Other functions</span>
+
+    <span class="k">let</span> <span class="n">chords</span> <span class="p">(</span><span class="n">scale</span><span class="p">:</span> <span class="nc">MajorScale</span><span class="o">):</span> <span class="p">(</span><span class="nc">Degree</span> <span class="p">*</span> <span class="nc">Chord</span><span class="p">)</span> <span class="kt">list</span> <span class="p">=</span>
+        <span class="bp">[]</span>
+
+<span class="c1">// Expected behavior</span>
+<span class="k">let</span> <span class="n">degreesAndChords</span> <span class="p">=</span>
+    <span class="nc">MajorScale</span> <span class="nc">C</span>
+    <span class="p">|&gt;</span> <span class="nn">MajorScale</span><span class="p">.</span><span class="n">chords</span>
+
+<span class="k">let</span> <span class="n">expectedContent</span> <span class="p">=</span>
+    <span class="p">[</span>
+        <span class="nc">I</span><span class="p">,</span>   <span class="nc">Chord</span> <span class="p">(</span><span class="nc">C</span><span class="p">,</span> <span class="nc">Major</span><span class="p">)</span>
+        <span class="nc">II</span><span class="p">,</span>  <span class="nc">Chord</span> <span class="p">(</span><span class="nc">D</span><span class="p">,</span> <span class="nc">Minor</span><span class="p">)</span>
+        <span class="nc">III</span><span class="p">,</span> <span class="nc">Chord</span> <span class="p">(</span><span class="nc">E</span><span class="p">,</span> <span class="nc">Minor</span><span class="p">)</span>
+        <span class="nc">IV</span><span class="p">,</span>  <span class="nc">Chord</span> <span class="p">(</span><span class="nc">F</span><span class="p">,</span> <span class="nc">Major</span><span class="p">)</span>
+        <span class="nc">V</span><span class="p">,</span>   <span class="nc">Chord</span> <span class="p">(</span><span class="nc">G</span><span class="p">,</span> <span class="nc">Major</span><span class="p">)</span>
+        <span class="nc">VI</span><span class="p">,</span>  <span class="nc">Chord</span> <span class="p">(</span><span class="nc">A</span><span class="p">,</span> <span class="nc">Minor</span><span class="p">)</span>
+        <span class="nc">VII</span><span class="p">,</span> <span class="nc">Chord</span> <span class="p">(</span><span class="nc">B</span><span class="p">,</span> <span class="nc">Diminished</span><span class="p">)</span>
+    <span class="p">]</span>
+</code></pre></div></div>
+
+<p>We saw that the degrees of the Major scale are:</p>
+<blockquote>
+  <p>I, ii, iii, IV, V, vi, vii°</p>
+</blockquote>
+
+<p>So we can zip the degrees with the notes of the scale:</p>
+<div class="language-fsharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span> <span class="nc">MajorScale</span> <span class="p">=</span>
+    <span class="c1">// Other functions</span>
+
+    <span class="k">let</span> <span class="k">private</span> <span class="n">degrees</span> <span class="p">=</span> <span class="p">[</span>
+        <span class="nc">Degree</span> <span class="p">(</span><span class="nc">I</span><span class="p">,</span>   <span class="nc">Major</span><span class="p">)</span>
+        <span class="nc">Degree</span> <span class="p">(</span><span class="nc">II</span><span class="p">,</span>  <span class="nc">Minor</span><span class="p">)</span>
+        <span class="nc">Degree</span> <span class="p">(</span><span class="nc">III</span><span class="p">,</span> <span class="nc">Minor</span><span class="p">)</span>
+        <span class="nc">Degree</span> <span class="p">(</span><span class="nc">IV</span><span class="p">,</span>  <span class="nc">Major</span><span class="p">)</span>
+        <span class="nc">Degree</span> <span class="p">(</span><span class="nc">V</span><span class="p">,</span>   <span class="nc">Major</span><span class="p">)</span>
+        <span class="nc">Degree</span> <span class="p">(</span><span class="nc">VI</span><span class="p">,</span>  <span class="nc">Minor</span><span class="p">)</span>
+        <span class="nc">Degree</span> <span class="p">(</span><span class="nc">VII</span><span class="p">,</span> <span class="nc">Diminished</span><span class="p">)</span>
+    <span class="p">]</span>
+
+    <span class="k">let</span> <span class="n">chords</span> <span class="p">(</span><span class="n">scale</span><span class="p">:</span> <span class="nc">MajorScale</span><span class="o">):</span> <span class="p">(</span><span class="nc">Degree</span> <span class="p">*</span> <span class="nc">Chord</span><span class="p">)</span> <span class="kt">list</span> <span class="p">=</span>
+        <span class="n">scale</span>
+        <span class="p">|&gt;</span> <span class="n">notes</span>
+        <span class="p">|&gt;</span> <span class="nn">List</span><span class="p">.</span><span class="n">zip</span> <span class="n">degrees</span>
+        <span class="p">|&gt;</span> <span class="nn">List</span><span class="p">.</span><span class="n">map</span> <span class="p">(</span><span class="k">fun</span> <span class="p">(</span><span class="n">degree</span><span class="p">,</span> <span class="n">note</span><span class="p">)</span> <span class="p">-&gt;</span>
+            <span class="k">let</span> <span class="p">(</span><span class="nc">Degree</span> <span class="o">(_,</span> <span class="n">chordType</span><span class="o">))</span> <span class="p">=</span> <span class="n">degree</span>
+
+            <span class="n">degree</span><span class="p">,</span> <span class="nc">Chord</span> <span class="p">(</span><span class="n">note</span><span class="p">,</span> <span class="n">chordType</span><span class="p">)</span>
+        <span class="p">)</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">List.zip</code> combine the first element of the two lists, then the second element of the two lists, and so on:</p>
+<div class="language-fsharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="n">numbers</span> <span class="p">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">;</span> <span class="mi">2</span><span class="p">;</span> <span class="mi">3</span><span class="p">]</span>
+<span class="k">let</span> <span class="n">strings</span> <span class="p">=</span> <span class="p">[</span> <span class="s2">"foo"</span><span class="p">;</span> <span class="s2">"bar"</span><span class="p">;</span> <span class="s2">"baz"</span> <span class="p">]</span>
+
+<span class="k">let</span> <span class="n">zipped</span> <span class="p">=</span> <span class="nn">List</span><span class="p">.</span><span class="n">zip</span> <span class="n">numbers</span> <span class="n">strings</span>
+
+<span class="k">let</span> <span class="n">expected</span> <span class="p">=</span> <span class="p">[</span>
+    <span class="mi">1</span><span class="p">,</span> <span class="s2">"foo"</span>
+    <span class="mi">2</span><span class="p">,</span> <span class="s2">"bar"</span>
+    <span class="mi">3</span><span class="p">,</span> <span class="s2">"baz"</span>
+<span class="p">]</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">List.zip</code> here will return a <code class="language-plaintext highlighter-rouge">(Degree * Note) list</code>. Then we have to map each tuple to return the <code class="language-plaintext highlighter-rouge">Degree * Chord</code> depending on the <code class="language-plaintext highlighter-rouge">Note</code> and on the <code class="language-plaintext highlighter-rouge">ChordType</code> of the <code class="language-plaintext highlighter-rouge">Degree</code>.</p>
+
+<p><code class="language-plaintext highlighter-rouge">List.map</code> takes a function <code class="language-plaintext highlighter-rouge">'a -&gt; 'b</code> and a <code class="language-plaintext highlighter-rouge">'a list</code> and returns a <code class="language-plaintext highlighter-rouge">'b list</code>. <code class="language-plaintext highlighter-rouge">'a</code> and <code class="language-plaintext highlighter-rouge">'b</code> are generic type and in F#, they start with a <code class="language-plaintext highlighter-rouge">'</code>.</p>
+
+<div class="language-fsharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="n">increment</span> <span class="n">x</span> <span class="p">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="c1">// [2; 3; 4]</span>
+<span class="k">let</span> <span class="n">incrementedNumbers</span> <span class="p">=</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">;</span> <span class="mi">2</span><span class="p">;</span> <span class="mi">3</span><span class="p">]</span>
+    <span class="p">|&gt;</span> <span class="nn">List</span><span class="p">.</span><span class="n">map</span> <span class="n">increment</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">List.zip</code> returns a tuple, so the parameter of the lambda should be deconstructed by writing <code class="language-plaintext highlighter-rouge">fun (degree, note) -&gt; ...</code>. It means that this lambda takes one argument which is a deconstructed tuple.</p>
+
+<p>For each tuple, we deconstruct the <code class="language-plaintext highlighter-rouge">Degree</code> to extract the <code class="language-plaintext highlighter-rouge">ChordType</code> and then we can return a <code class="language-plaintext highlighter-rouge">Degree * Chord</code>.</p>
+
+<p>This <code class="language-plaintext highlighter-rouge">List.zip</code> followed by <code class="language-plaintext highlighter-rouge">List.map</code> can be refactored with <code class="language-plaintext highlighter-rouge">List.map2</code>:</p>
+<div class="language-fsharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">module</span> <span class="nc">MajorScale</span> <span class="p">=</span>
+    <span class="c1">// Other functions</span>
+
+    <span class="k">let</span> <span class="k">private</span> <span class="n">degrees</span> <span class="p">=</span> <span class="p">[</span>
+        <span class="nc">Degree</span> <span class="p">(</span><span class="nc">I</span><span class="p">,</span>   <span class="nc">Major</span><span class="p">)</span>
+        <span class="nc">Degree</span> <span class="p">(</span><span class="nc">II</span><span class="p">,</span>  <span class="nc">Minor</span><span class="p">)</span>
+        <span class="nc">Degree</span> <span class="p">(</span><span class="nc">III</span><span class="p">,</span> <span class="nc">Minor</span><span class="p">)</span>
+        <span class="nc">Degree</span> <span class="p">(</span><span class="nc">IV</span><span class="p">,</span>  <span class="nc">Major</span><span class="p">)</span>
+        <span class="nc">Degree</span> <span class="p">(</span><span class="nc">V</span><span class="p">,</span>   <span class="nc">Major</span><span class="p">)</span>
+        <span class="nc">Degree</span> <span class="p">(</span><span class="nc">VI</span><span class="p">,</span>  <span class="nc">Minor</span><span class="p">)</span>
+        <span class="nc">Degree</span> <span class="p">(</span><span class="nc">VII</span><span class="p">,</span> <span class="nc">Diminished</span><span class="p">)</span>
+    <span class="p">]</span>
+
+    <span class="k">let</span> <span class="n">chords</span> <span class="p">(</span><span class="n">scale</span><span class="p">:</span> <span class="nc">MajorScale</span><span class="o">):</span> <span class="p">(</span><span class="nc">Degree</span> <span class="p">*</span> <span class="nc">Chord</span><span class="p">)</span> <span class="kt">list</span> <span class="p">=</span>
+        <span class="k">let</span> <span class="n">degreeChord</span> <span class="n">degree</span> <span class="n">note</span> <span class="p">=</span>
+            <span class="k">let</span> <span class="p">(</span><span class="nc">Degree</span> <span class="o">(_,</span> <span class="n">chordType</span><span class="o">))</span> <span class="p">=</span> <span class="n">degree</span>
+            <span class="n">degree</span><span class="p">,</span> <span class="nc">Chord</span> <span class="p">(</span><span class="n">note</span><span class="p">,</span> <span class="n">chordType</span><span class="p">)</span>
+
+        <span class="nn">List</span><span class="p">.</span><span class="n">map2</span>
+            <span class="n">degreeChord</span>
+            <span class="n">degrees</span>
+            <span class="p">(</span><span class="n">notes</span> <span class="n">scale</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>At the end of the script, we can print the chords of the scale:</p>
+<div class="language-fsharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Show the chords of the scale</span>
+<span class="nc">MajorScale</span> <span class="n">randomNote</span>
+<span class="p">|&gt;</span> <span class="nn">MajorScale</span><span class="p">.</span><span class="n">chords</span>
+<span class="p">|&gt;</span> <span class="nn">List</span><span class="p">.</span><span class="n">iter</span> <span class="p">(</span><span class="k">fun</span> <span class="p">(</span><span class="n">degree</span><span class="p">,</span> <span class="n">chord</span><span class="p">)</span> <span class="p">-&gt;</span>
+    <span class="k">let</span> <span class="n">degreeName</span> <span class="p">=</span> <span class="nn">Degree</span><span class="p">.</span><span class="n">name</span> <span class="n">degree</span>
+    <span class="k">let</span> <span class="n">chordName</span> <span class="p">=</span> <span class="nn">Chord</span><span class="p">.</span><span class="n">name</span> <span class="n">chord</span>
+    <span class="n">printfn</span> <span class="s2">"%-4s: %s"</span> <span class="n">degreeName</span> <span class="n">chordName</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">List.iter</code> executes a function for each element. To print <code class="language-plaintext highlighter-rouge">Degree * Chord</code> we use <code class="language-plaintext highlighter-rouge">printfn</code> with the <code class="language-plaintext highlighter-rouge">%-4s</code> which means:</p>
+<blockquote>
+  <p>it’s a string that takes exactly 4 characters and is left-aligned</p>
+</blockquote>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>That’s all for this step. You can check out the full code <a href="https://github.com/cmoinard/FsMusicTheory/blob/main/Scripts/03_Chords.fsx">here</a>.</p>
+
+<p>Next step: Modes of the Major scale</p>
+
+  </div><a class="u-url" href="/2022/12/11/fsharp-music-theory-03-chords.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+        <ul class="contact-list">
+          <li class="p-name">Christophe Moinard</li>
+          <li><a class="u-email" href="mailto:christophe.moinard@netc.fr">christophe.moinard@netc.fr</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p>F#, Meshuggah and crème de marrons addict
+</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li>
+  <a rel="me" href="https://github.com/cmoinard" target="_blank" title="github">
+    <svg class="svg-icon grey">
+      <use xlink:href="/assets/minima-social-icons.svg#github"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="https://twitter.com/chr_moinard" target="_blank" title="twitter">
+    <svg class="svg-icon grey">
+      <use xlink:href="/assets/minima-social-icons.svg#twitter"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="https://piaille.fr/@cmoinard" target="_blank" title="mastodon">
+    <svg class="svg-icon grey">
+      <use xlink:href="/assets/minima-social-icons.svg#mastodon"></use>
+    </svg>
+  </a>
+</li>
+</ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
