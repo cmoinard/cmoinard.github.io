@@ -6,12 +6,13 @@ description: Music theory in F# - Introduction
 tags: F# MusicTheory
 ---
 
-
 This is the introduction of the music theory in F# series:
 - Introduction
 - Step 1: [Random note](/2022/12/11/fsharp-music-theory-01-random-note)
 - Step 2: [The Major scale](/2022/12/11/fsharp-music-theory-02-major-scale)
 - Step 3: [Chords of the Major scale](/2022/12/11/fsharp-music-theory-03-chords)
+
+This serie is part of the [F# Advent 2022](https://sergeytihon.com/2022/10/28/f-advent-calendar-in-english-2022/).
 
 ## Backstory
 
@@ -46,5 +47,15 @@ I will dive a bit into music theory, but you don't have to know it. I hope you w
 
 If you already know music theory, you will see horrible things. Keep in mind that the mistakes are intentional to simplify the explanations, but I will fix them later.
 
-
 Next step: [Random note](/2022/12/11/fsharp-music-theory-01-random-note)
+
+
+## Update 2022-12-13
+
+I started writing this article weeks ago, I was really excited for my first contribution of the F# advent, I thought this subject was specific enough to be original.
+
+But just a week ago, [Michal Nebes](https://mastodon.social/@emneb) published a blog article on the [same exact subject](https://blog.emneb.dev/posts/02-generating-chord-progressions-in-fsharp.html) 😅
+
+His article is really great and he goes further by creating sounds, exactly what I was searching for since months!
+
+If you already read his article, I hope you'll enjoy mine as well 🙏

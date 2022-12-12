@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2022-12-12T23:58:44+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Christophe Moinard’s Blog</title><subtitle>F#, Meshuggah and crème de marrons addict
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2022-12-13T00:17:39+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Christophe Moinard’s Blog</title><subtitle>F#, Meshuggah and crème de marrons addict
 </subtitle><author><name>Christophe Moinard</name><email>christophe.moinard@netc.fr</email></author><entry><title type="html">Music theory in F# - Introduction</title><link href="http://localhost:4000/2022/12/11/fsharp-music-theory-00-introduction.html" rel="alternate" type="text/html" title="Music theory in F# - Introduction" /><published>2022-12-11T13:00:00+01:00</published><updated>2022-12-11T13:00:00+01:00</updated><id>http://localhost:4000/2022/12/11/fsharp-music-theory-00-introduction</id><content type="html" xml:base="http://localhost:4000/2022/12/11/fsharp-music-theory-00-introduction.html"><![CDATA[<p>This is the introduction of the music theory in F# series:</p>
 <ul>
   <li>Introduction</li>
@@ -6,6 +6,8 @@
   <li>Step 2: <a href="/2022/12/11/fsharp-music-theory-02-major-scale">The Major scale</a></li>
   <li>Step 3: <a href="/2022/12/11/fsharp-music-theory-03-chords">Chords of the Major scale</a></li>
 </ul>
+
+<p>This serie is part of the <a href="https://sergeytihon.com/2022/10/28/f-advent-calendar-in-english-2022/">F# Advent 2022</a>.</p>
 
 <h2 id="backstory">Backstory</h2>
 
@@ -43,7 +45,17 @@
 
 <p>If you already know music theory, you will see horrible things. Keep in mind that the mistakes are intentional to simplify the explanations, but I will fix them later.</p>
 
-<p>Next step: <a href="/2022/12/11/fsharp-music-theory-01-random-note">Random note</a></p>]]></content><author><name>Christophe Moinard</name><email>christophe.moinard@netc.fr</email></author><category term="F#" /><category term="MusicTheory" /><summary type="html"><![CDATA[Music theory in F# - Introduction]]></summary></entry><entry><title type="html">Music theory in F# - Random note</title><link href="http://localhost:4000/2022/12/11/fsharp-music-theory-01-random-note.html" rel="alternate" type="text/html" title="Music theory in F# - Random note" /><published>2022-12-11T13:00:00+01:00</published><updated>2022-12-11T13:00:00+01:00</updated><id>http://localhost:4000/2022/12/11/fsharp-music-theory-01-random-note</id><content type="html" xml:base="http://localhost:4000/2022/12/11/fsharp-music-theory-01-random-note.html"><![CDATA[<h1 id="first-step-random-note">First step: Random note</h1>
+<p>Next step: <a href="/2022/12/11/fsharp-music-theory-01-random-note">Random note</a></p>
+
+<h2 id="update-2022-12-13">Update 2022-12-13</h2>
+
+<p>I started writing this article weeks ago, I was really excited for my first contribution of the F# advent, I thought this subject was specific enough to be original.</p>
+
+<p>But just a week ago, <a href="https://mastodon.social/@emneb">Michal Nebes</a> published a blog article on the <a href="https://blog.emneb.dev/posts/02-generating-chord-progressions-in-fsharp.html">same exact subject</a> 😅</p>
+
+<p>His article is really great and he goes further by creating sounds, exactly what I was searching for since months!</p>
+
+<p>If you already read his article, I hope you’ll enjoy mine as well 🙏</p>]]></content><author><name>Christophe Moinard</name><email>christophe.moinard@netc.fr</email></author><category term="F#" /><category term="MusicTheory" /><summary type="html"><![CDATA[Music theory in F# - Introduction]]></summary></entry><entry><title type="html">Music theory in F# - Random note</title><link href="http://localhost:4000/2022/12/11/fsharp-music-theory-01-random-note.html" rel="alternate" type="text/html" title="Music theory in F# - Random note" /><published>2022-12-11T13:00:00+01:00</published><updated>2022-12-11T13:00:00+01:00</updated><id>http://localhost:4000/2022/12/11/fsharp-music-theory-01-random-note</id><content type="html" xml:base="http://localhost:4000/2022/12/11/fsharp-music-theory-01-random-note.html"><![CDATA[<h1 id="first-step-random-note">First step: Random note</h1>
 
 <p>This is the first part of the music theory in F# series:</p>
 <ul>
