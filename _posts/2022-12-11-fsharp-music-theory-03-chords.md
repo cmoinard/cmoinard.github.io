@@ -20,7 +20,7 @@ First idea, you can play octaves on top of your melody, but play only notes in y
 
 ![Octaves on a piano](/assets/images/fsharp-music-theory/OctaveChord.jpg)
 
-[Listen](/assets/audio/fsharp-music-theory/C8-chord.mp3)
+{% include embed-audio.html src="/assets/audio/fsharp-music-theory/C8-chord.mp3" %}
 
 Octaves are OK but they feel a bit hollow. That's OK if you want this kind of feeling in your song.
 
@@ -42,7 +42,7 @@ These power chords are used a lot in [rock, punk and metal](https://www.youtube.
 
 ![C power chord on a piano](/assets/images/fsharp-music-theory/PowerChord.jpg)
 
-[Listen](/assets/audio/fsharp-music-theory/C5-chord.mp3)
+{% include embed-audio.html src="/assets/audio/fsharp-music-theory/C5-chord.mp3" %}
 
 Power chords are great and powerful, but they miss something, we can't say if they are joyful or sad. For that, add the third to your power chord.
 
@@ -50,13 +50,13 @@ If the third is 4 semitones away from the root, this third is called major third
 
 ![C Major chord on a piano](/assets/images/fsharp-music-theory/MajorChord.jpg)
 
-[Listen](/assets/audio/fsharp-music-theory/C-chord.mp3)
+{% include embed-audio.html src="/assets/audio/fsharp-music-theory/C-chord.mp3" %}
 
 If the third is 3 semitones away from the root, this third is called minor third, and the chord is a minor chord. Minor chords sounds sad, they are noted with a little `m`. So `Cm` is a C minor.
 
 ![C Minor chord on a piano](/assets/images/fsharp-music-theory/MinorChord.jpg)
 
-[Listen](/assets/audio/fsharp-music-theory/Cm-chord.mp3)
+{% include embed-audio.html src="/assets/audio/fsharp-music-theory/Cm-chord.mp3" %}
 
 Here are some examples:
 
@@ -84,7 +84,12 @@ Fifth: C# (F# + 7 semitones)
 
 OK, we know octaves, power chords, Major chords and minor chords, but can we play any chord we want on top of our song?
 
-We can, but it can sound dissonant. If your melody is made with C, E and G and you play a C minor (made with C-D#-G) chord on it, you will play at the same time the E from your melody and the D# from your Cm chord. D# and E are just a semitone away frow each other, if you play them at the same time, it will sound really [dissonant](/assets/audio/fsharp-music-theory/C-with-minor-second.mp3). But it can be also [awesome](https://youtu.be/YeTNkPXRrVY?list=PL_9gWeiShHFHzpU20PyVHiawAuPCJH9qH&t=353) to create a lot of tension.
+We can, but it will sound strange. If your melody is made with C, E and G and you play a C minor (made with C-D#-G) chord on it, you will play at the same time the E from your melody and the D# from your Cm chord. D# and E are just a semitone away frow each other, if you play them at the same time, it will sound really 
+dissonant.
+
+{% include embed-audio.html src="/assets/audio/fsharp-music-theory/C-with-minor-second.mp3" %}
+
+It is not forbidden, it can be also [awesome](https://youtu.be/YeTNkPXRrVY?list=PL_9gWeiShHFHzpU20PyVHiawAuPCJH9qH&t=353) to create a lot of tension.
 
 A better option to avoid dissonance is to use only the notes of your scale.
 1. Choose one note of the scale as the chord root
@@ -142,7 +147,7 @@ The B chord in a C Major scale is a B diminished (B° or Bdim).
 
 ![B° chord in C Major scale](/assets/images/fsharp-music-theory/BDiminishedChordInCMajorScale.jpg)
 
-[Listen](/assets/audio/fsharp-music-theory/Bdim-chord.mp3)
+{% include embed-audio.html src="/assets/audio/fsharp-music-theory/Bdim-chord.mp3" %}
 
 Diminished chords sounds weird because of this diminished fifth, they are spicy, uncomfortable. It is great if you want this feeling in your song, but I you don't, you can avoid it.
 
@@ -185,13 +190,15 @@ Chords:
 
 To build a chord progression, it is a good idea to start with the first degree and insist on it, the listener will understand that this chord is the root, it will feel like home. Then play any chord you want.
 
-[Example in C Major](/assets/audio/fsharp-music-theory/C-I_vi_ii_V.mp3)
+Example in C Major:
+
+{% include embed-audio.html src="/assets/audio/fsharp-music-theory/C-I_vi_ii_V.mp3" %}
 
 One more thing, these degrees are really important because some chords progressions work better than others, they are called cadences. Finishing your chord progression with the V degree and starting again with the I degree work really well. This is called a perfect authentic cadence. There are a lot of [existing cadences](https://en.wikipedia.org/wiki/Cadence).
 
 One of the most known chord progression is the [I-V-vi-IV](https://en.wikipedia.org/wiki/I%E2%80%93V%E2%80%93vi%E2%80%93IV_progression)
 
-[Listen](/assets/audio/fsharp-music-theory/C-I_IV_vi_V.mp3)
+{% include embed-audio.html src="/assets/audio/fsharp-music-theory/C-I_V_vi_IV.mp3" %}
 
 This was this progression in the famous [Axis of awesome - 4 chords song](https://www.youtube.com/watch?v=5pidokakU4I).
 

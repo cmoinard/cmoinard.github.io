@@ -6,8 +6,6 @@ description: Music theory in F# - Major scale
 tags: F# MusicTheory
 ---
 
-# Second step: The Major scale
-
 This is the second part of the music theory in F# series:
 - [Introduction](/2022/12/11/fsharp-music-theory-00-introduction)
 - Step 1: [Random note](/2022/12/11/fsharp-music-theory-01-random-note)
@@ -21,7 +19,9 @@ There are 12 notes in an octave, but if I play random notes, the sound of the me
 
 The most famous scale is the major scale. A scale has a starting note named **root** and other notes after it. In example the C major scale is:
 
-> C, D, E, F, G, A, B ([Listen](/assets/audio/fsharp-music-theory/C-major-scale.mp3))
+> C, D, E, F, G, A, B
+
+{% include embed-audio.html src="/assets/audio/fsharp-music-theory/C-major-scale.mp3" %}
 
 A scale is defined by the intervals between each notes. To create a major scale, choose a root note and add these intervals:
 
@@ -52,7 +52,8 @@ Sixth:   C# = B  + 2 semitones
 Seventh: D# = C# + 2 semitones
 Octave:  E  = D# + 1 semitone
 ```
-([Listen](/assets/audio/fsharp-music-theory/E-major-scale.mp3))
+
+{% include embed-audio.html src="/assets/audio/fsharp-music-theory/E-major-scale.mp3" %}
 
 And so on...
 
