@@ -6,7 +6,6 @@ description: Music theory in F# - Introduction
 tags: F# MusicTheory
 ---
 
-# Introduction
 
 This is the introduction of the music theory in F# series:
 - Introduction

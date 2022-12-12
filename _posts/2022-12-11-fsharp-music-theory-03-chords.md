@@ -6,8 +6,6 @@ description: Music theory in F# - Chords of the Major scale
 tags: F# MusicTheory
 ---
 
-# Third step: The chords of the Major scale
-
 This is the third part of the music theory in F# series:
 - [Introduction](/2022/12/11/fsharp-music-theory-00-introduction)
 - Step 1: [Random note](/2022/12/11/fsharp-music-theory-01-random-note)
