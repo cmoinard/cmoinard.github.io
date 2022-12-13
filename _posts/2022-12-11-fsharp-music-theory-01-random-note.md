@@ -6,8 +6,6 @@ description: Music theory in F# - Random note
 tags: F# MusicTheory
 ---
 
-# First step: Random note
-
 This is the first part of the music theory in F# series:
 - [Introduction](/2022/12/11/fsharp-music-theory-00-introduction)
 - Step 1: Random note
