@@ -75,13 +75,13 @@ Altered: C#, D#, F#, G#, A#
 
 <p><code class="language-plaintext highlighter-rouge">A#</code> and <code class="language-plaintext highlighter-rouge">Bb</code> are enharmonic, it means that they produce the same sound.</p>
 
-<p>If you increase (or decrease) a note by 12 semitones, you’ll have the same note but with a higher (or lower) pitch, these notes are called octaves.</p>
+<p>If you add 12 semitones to a note, upwards or downwards, the note will be the same from the start but with a higher or lower pitch. They are called octaves.</p>
 
 <p><img src="/assets/images/fsharp-music-theory/Octaves.jpg" alt="Piano with all the C marked as octaves" /></p>
 
 <h2 id="code">Code</h2>
 
-<p>Like I said before, some notes produce the same sound, so I will represent only sharp notes and not flat ones to simplify.</p>
+<p>Like I said before, some notes produce the same sound, so for the sake of simplicity, I will represent only sharp notes and not flat ones for now.</p>
 
 <div class="language-fsharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">type</span> <span class="nc">Note</span> <span class="p">=</span>
     <span class="p">|</span> <span class="nc">C</span> <span class="p">|</span> <span class="nc">CSharp</span>

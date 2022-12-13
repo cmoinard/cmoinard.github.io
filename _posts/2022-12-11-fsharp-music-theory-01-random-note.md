@@ -31,13 +31,13 @@ A flat (`b`) means that the base note is a semitone lower, so `Bb` is a semitone
 
 `A#` and `Bb` are enharmonic, it means that they produce the same sound.
 
-If you increase (or decrease) a note by 12 semitones, you'll have the same note but with a higher (or lower) pitch, these notes are called octaves.
+If you add 12 semitones to a note, upwards or downwards, the note will be the same from the start but with a higher or lower pitch. They are called octaves.
 
 ![Piano with all the C marked as octaves](/assets/images/fsharp-music-theory/Octaves.jpg)
 
 ## Code
 
-Like I said before, some notes produce the same sound, so I will represent only sharp notes and not flat ones to simplify.
+Like I said before, some notes produce the same sound, so for the sake of simplicity, I will represent only sharp notes and not flat ones for now.
 
 ```fsharp
 type Note =

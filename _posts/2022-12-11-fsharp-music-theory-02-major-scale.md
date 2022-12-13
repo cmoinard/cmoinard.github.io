@@ -15,7 +15,7 @@ This is the second part of the music theory in F# series:
 
 ## Theory
 
-There are 12 notes in an octave, but if I play random notes, the sound of the melody will closer to a piano that fells down the stairs than a Beethoven sonata. Fortunately, scales will help us.
+There are 12 notes in an octave, but if I play random notes, the sound of the melody will be closer to a piano falling down the stairs than a Beethoven sonata. Fortunately, scales will help us.
 
 The most famous scale is the major scale. A scale has a starting note named **root** and other notes after it. In example the C major scale is:
 
